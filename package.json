@@ -4,12 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "limpiar": "rimraf ./allure-report && rimraf ./allure-results",
+    "ejecutar-pruebas": "npx cypress run --headed --env allure=true",
+    "generar-reporte": "allure generate allure-results -o allure-report --clean",
+    "abrir-reporte": "npx allure open",
+    "test": "npm run limpiar && npm run ejecutar-pruebas && npm run generar-reporte && npm run abrir-reporte"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "cypress": "^13.3.3"
-  }
+  "dependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.0",
+    "allure-commandline": "^2.24.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jolopez1008/curso-cypress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jolopez1008/curso-cypress/issues"
+  },
+  "homepage": "https://github.com/jolopez1008/curso-cypress#readme"
 }
