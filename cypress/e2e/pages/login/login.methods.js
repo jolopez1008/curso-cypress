@@ -2,11 +2,11 @@ import { LoginElements } from "./login.elements";
 
 export class LoginMethods {
     static insertUserName(userName) {
-        LoginElements.tesxtBoxes.userName.type(userName);
+        LoginElements.tesxtBoxes.userName.invoke('val', userName);
     }
 
     static insertPassword(password) {
-        LoginElements.tesxtBoxes.password.type(password);
+        LoginElements.tesxtBoxes.password.invoke('val', password);
     }
 
     static clickLogin() {
