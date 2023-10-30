@@ -25,4 +25,25 @@ describe(CommonPagesData.testSuite.autenticacion, () => {
         Logger.verification('Verificar que se muestra el mensaje Welcome user.')
         CommonPagesMethod.verifyUserIsSigned(LoginData.validCredentials.userName)
     })
+
+    it(': Inicio de sesión inválido', () => {
+        Logger.stepNumber(1)
+        Logger.step('Navegar a la página de inicio')
+        CommonPagesMethod.navigateToDemoBlaze()
+
+        Logger.stepNumber(2)
+        Logger.step('Hacer clic en "Log in" en la barra de navegación.')
+        CommonPagesMethod.clickOnLogInOption()
+
+        Logger.stepNumber(3)
+        Logger.step('Ingresar un nombre de usuario y contraseña inválidos.')
+        LoginMethods.insertUserName(LoginData.validCredentials.userName)
+        LoginMethods.insertPassword('password invalido')
+
+        Logger.stepNumber(4)
+        Logger.step('Hacer clic en "Log in" para iniciar sesión.')
+        LoginMethods.clickLogin()
+        Logger.verification('Verificar que se muestra el mensaje Welcome user.')
+        LoginMethods.verifyWrongPasswordMessage()
+    })
 });
