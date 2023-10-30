@@ -1,3 +1,4 @@
+import { Logger } from "../../util/logger";
 import { LoginElements } from "./login.elements";
 
 export class LoginMethods {
@@ -18,8 +19,11 @@ export class LoginMethods {
     }
 
     static loginWithCredentials(userName, password) {
+        Logger.subStep(`Insert username ${userName}`);
         LoginMethods.insertUserName(userName);
+        Logger.subStep(`Insert password ${password}`);
         LoginMethods.insertPassword(password);
+        Logger.subStep(`Click login`);
         LoginMethods.clickLogin();
     }
 }
