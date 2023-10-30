@@ -1,3 +1,5 @@
+import { CommonPagesMethod } from "../common-page/common-page.mothods";
+
 export class SignupMethods{
     static insertUserName(userName){
         cy.get('input#sign-username').invoke('val', userName);
@@ -19,5 +21,9 @@ export class SignupMethods{
         SignupMethods.insertUserName(userName);
         SignupMethods.insertPassword(password);
         SignupMethods.clickSignup();
+    }
+
+    static verifySignupSuccessFulMessageIsDisplayed(){
+        CommonPagesMethod.verifyAlert('Sign up successful.')
     }
 }
