@@ -1,11 +1,12 @@
 import { CommonPagesData } from "../pages/common-page/common-page.data";
 import { CommonPagesMethod } from "../pages/common-page/common-page.mothods";
+import { LoginData } from "../pages/login/login.data";
 import { LoginMethods } from "../pages/login/login.methods";
 import { SignupMethods } from "../pages/signup/signup.methods";
 import { Logger } from "../util/logger";
 const user = CommonPagesMethod.generateRandomString();
 const password = CommonPagesMethod.generateRandomString(7);
-const existingUser = 'random01';
+const existingUser = LoginData.validCredentials.userName;
 
 describe(CommonPagesData.testSuite.registro, () => {
     it('Registro de Valido', () => {
