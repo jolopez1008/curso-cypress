@@ -1,7 +1,16 @@
+import { CommonPagesMethod } from "../common-page/common-page.mothods";
 import { ProductDetailsElements } from "./product-details.elements";
 
 export class ProductDetailsMethods{
-    static clickOnAddToCartButton(){
+    static clickOnAddToCartButton() {
         ProductDetailsElements.buttons.addToCart.click();
+      }
+    
+    static verifyProductDetailsPageDisplayed(){
+    ProductDetailsElements.buttons.addToCart.should('be.visible')
+    }
+
+    static verifyProductAddedMessage(){
+        CommonPagesMethod.verifyAlert('Product added')
     }
 }

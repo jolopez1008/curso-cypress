@@ -8,6 +8,6 @@ export class HomeElements{
     }
 
     static productByName(name){
-        return cy.contains('a', name);
+        return cy.contains('a', name, {timeout: 30000});
     }
 }
