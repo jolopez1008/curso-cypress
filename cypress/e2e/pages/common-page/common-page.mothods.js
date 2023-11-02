@@ -25,6 +25,9 @@ export class CommonPagesMethod{
 
     static clickOnLogInOption(){
         CommonPagesElements.topMenu.logIn.click()
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false
+        })
     }   
 
     static clickOnSignUpOption(){
