@@ -3,7 +3,8 @@ import { CommonPagesElements } from "./common-page.elements";
 
 export class CommonPagesMethod{
     static navigateToDemoBlaze(){
-        cy.clearCookies()
+        cy.clearAllCookies()
+        cy.clearLocalStorage()
         cy.visit(CommonPagesData.urls.homePage)
     }
 
@@ -52,5 +53,13 @@ export class CommonPagesMethod{
 
     static verifyUserIsSigned(userName){
         CommonPagesElements.signedUser.should('have.text', `Welcome ${userName}`)
+    }
+
+    static logOut(){
+        cy.get('body').then(($body) => {
+            if($body.find(CommonPagesElements.topMenu.logOut).length > 0){
+                CommonPagesElements.topMenu.logOut.click();
+            }
+        });
     }
 }

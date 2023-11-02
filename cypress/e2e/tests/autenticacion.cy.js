@@ -24,6 +24,10 @@ describe(CommonPagesData.testSuite.autenticacion, () => {
         LoginMethods.clickLogin()
         Logger.verification('Verificar que se muestra el mensaje Welcome user.')
         CommonPagesMethod.verifyUserIsSigned(LoginData.validCredentials.userName)
+
+        Logger.postCondition('Cerrar sesión')
+        CommonPagesMethod.logOut()
+        cy.wait(5000)
     })
 
     it(': Inicio de sesión inválido', () => {

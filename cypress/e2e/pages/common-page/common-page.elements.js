@@ -7,10 +7,10 @@ export class CommonPagesElements{
             get cart () { return cy.contains("a", "Cart")},
             get logIn () { return cy.contains("a", "Log in")},
             get signUp () { return cy.contains("a", "Sign up")},
+            get logOut () { return cy.contains("a", "Log out")}
         }
     }
     static get signedUser(){
         return cy.get('a#nameofuser');
-        
     }
 }
