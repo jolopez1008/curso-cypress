@@ -6,6 +6,7 @@ export class CommonPagesMethod{
         cy.clearAllCookies()
         cy.clearLocalStorage()
         cy.visit(CommonPagesData.urls.homePage)
+        CommonPagesMethod.clickOnHomeOption()
     }
 
     static clickOnHomeOption(){

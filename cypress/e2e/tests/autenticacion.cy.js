@@ -27,7 +27,6 @@ describe(CommonPagesData.testSuite.autenticacion, () => {
 
         Logger.postCondition('Cerrar sesión')
         CommonPagesMethod.logOut()
-        cy.wait(5000)
     })
 
     it(': Inicio de sesión inválido', () => {
