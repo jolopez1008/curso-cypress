@@ -5,7 +5,7 @@ phases:
       nodejs: latest
   pre_build:
     commands:
-      npm intall
+      npm install
   build:
     commands:
       npm run cypress:parallel
